@@ -409,8 +409,11 @@ ceph_rhcs_version: 4
 # https://github.com/civetweb/civetweb/blob/master/docs/UserManual.md
 
 #radosgw_frontend_port: "{{ radosgw_civetweb_port if radosgw_frontend_type == 'civetweb' else '8080' }}"
-# The server private key, public certificate and any other CA or intermediate certificates should be in one file, in PEM format.
+# For civetweb frontends, the server private key, public certificate and any other CA or intermediate certificates
+# should be in one file, in PEM format, specified by radosgw_frontend_ssl_certificate.
+# A separate file can be used to store the private key, specified by radosgw_frontend_ssl_private_key, if using the beast.
 #radosgw_frontend_ssl_certificate: ""
+#radosgw_frontend_ssl_private_key: ""
 #radosgw_frontend_options: "{{ radosgw_civetweb_options if radosgw_frontend_type == 'civetweb' else '' }}"
 #radosgw_thread_pool_size: 512
 
